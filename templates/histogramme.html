@@ -1,103 +1,49 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="utf-8" />
-<title>Histogramme Tawarano</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
- 
-  <!-- Google Charts -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- 
-  <style>
-    body {
-      font-family: "Georgia", Arial, sans-serif;
-      margin: 20px 40px;
-      color: #111;
-    }
-    h1.page-title {
-      font-size: 44px;
-      margin: 0 0 20px 0;
-      font-weight: 700;
-    }
-    /* Conteneur centré pour le graphique */
-    .chart-container {
-      max-width: 1100px;
-      margin: 10px 0 60px 0;
-    }
-    /* Petit ajustement responsive */
-    @media (max-width: 900px) {
-      h1.page-title { font-size: 32px; }
-    }
-</style>
- 
-  <script type="text/javascript">
-    google.charts.load('current', { packages: ['corechart'] });
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
  
     function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Mois', 'Température'],
-        ['Janvier', 12],
-        ['Février', 14],
-        ['Mars', 18],
-        ['Avril', 22],
-        ['Mai', 26],
-        ['Juin', 30],
-        ['Juillet', 33],
-        ['Août', 32],
-        ['Septembre', 28],
-        ['Octobre', 23],
-        ['Novembre', 18],
-        ['Décembre', 14]
-      ]);
+        var data = google.visualization.arrayToDataTable([
+            ['Mois', 'Température'],
+            ['Janvier', 12],
+            ['Février', 14],
+            ['Mars', 18],
+            ['Avril', 22],
+            ['Mai', 26],
+            ['Juin', 30],
+            ['Juillet', 33],
+            ['Août', 32],
+            ['Septembre', 28],
+            ['Octobre', 22],
+            ['Novembre', 18],
+            ['Décembre', 14]
+        ]);
  
-      var options = {
-        title: 'Températures de Tawarano',
-        titleTextStyle: {
-          color: '#1b1b1b',
-          fontName: 'Georgia',
-          fontSize: 16,
-          bold: true
-        },
-        chartArea: {
-          left: 100,
-          top: 70,
-          width: '70%',
-          height: '65%'
-        },
-        legend: { position: 'none' },
+        var options = {
+            title: 'Évolution des températures à Tawarano',
+            colors: ['#FF69B4'],   // 🌸 Rose doux
+            backgroundColor: '#FFF0F5', // Rose clair
+            legend: { position: 'none' },
+            hAxis: {
+                textStyle: { color: '#C71585', fontSize: 12 }
+            },
+            vAxis: {
+                textStyle: { color: '#C71585', fontSize: 12 }
+            },
+            titleTextStyle: {
+                color: '#C71585',
+                fontSize: 20,
+                bold: true
+            }
+        };
  
-        /* Axes */
-        hAxis: {
-          title: 'Mois',
-          titleTextStyle: {
-            italic: true,
-            fontName: 'Georgia',
-            fontSize: 14,
-            color: '#333'
-          },
-          textStyle: { fontSize: 12, color: '#222' }
-        },
-        vAxis: {
-          title: 'Température (°C)',
-          titleTextStyle: {
-            italic: true,
-            fontName: 'Georgia',
-            fontSize: 14,
-            color: '#333'
-          },
-          textStyle: { fontSize: 12, color: '#222' },
-          minValue: 0
-        },
+        var chart = new google.visualization.ColumnChart(
+            document.getElementById('chart_div')
+        );
  
-        /* Couleurs des barres — palette multicolore */
-        colors: ['#FF6B6B', '#FFB86B', '#FFD86B', '#8CE99A', '#4D96FF', '#9B7BFF'],
-        /* groupWidth si besoin */
-        bar: { groupWidth: '65%' },
+        chart.draw(data, options);
+    }
+</script>
  
-        /* Grille */
-        backgroundColor: '#ffffff',
-        vAxis: { gridlines: { color: '#e6e6e6' }, title: 'Température (°C)', titleTextStyle: { italic: true, fontName: 'Georgia', fontSize: 14 } }
-      };
- 
-      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
