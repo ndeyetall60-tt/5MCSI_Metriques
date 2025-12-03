@@ -11,167 +11,133 @@
     body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        min-height: 100vh;
+        background: #f2f2f2;
+        padding: 40px;
         display: flex;
         justify-content: center;
-        align-items: center;
-        background: linear-gradient(to bottom right, #1e1e2e, #2a2a40);
-        overflow: hidden;
     }
 
-    /* Background animated waves */
-    .wave {
-        position: absolute;
-        width: 140%;
-        height: 140%;
-        background: radial-gradient(circle at 20% 20%, rgba(90,120,255,0.28), transparent 60%),
-                    radial-gradient(circle at 80% 80%, rgba(255,80,180,0.25), transparent 60%);
-        animation: rotate 18s infinite linear;
-        filter: blur(70px);
-    }
-
-    @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .contact-card {
-        position: relative;
-        width: 450px;
-        padding: 45px;
-        background: rgba(255,255,255,0.08);
-        border-radius: 24px;
-        border: 1px solid rgba(255,255,255,0.15);
-        backdrop-filter: blur(25px);
-        box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-        color: white;
-        animation: fadeUp 1s ease-out;
-    }
-
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(25px); }
-        to { opacity: 1; transform: translateY(0); }
+    .wrapper {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 1200px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     h1 {
-        text-align: center;
-        font-size: 32px;
-        margin-bottom: 10px;
+        font-size: 36px;
         font-weight: 700;
+        margin-bottom: 20px;
     }
 
-    .subtitle {
-        text-align: center;
-        font-size: 14px;
-        margin-bottom: 28px;
-        opacity: 0.8;
+    .left-block p,
+    .left-block div {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .left-block i {
+        font-size: 22px;
+        margin-right: 12px;
+    }
+
+    .image-block img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .right-block h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
     }
 
     label {
-        font-weight: 500;
         display: block;
         margin-bottom: 6px;
-        margin-top: 15px;
-        font-size: 15px;
-    }
-
-    .input-box {
-        position: relative;
-    }
-
-    .input-box i {
-        position: absolute;
-        left: 14px;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0.8;
+        font-weight: 600;
     }
 
     input, textarea {
         width: 100%;
-        padding: 13px 14px 13px 42px;
-        border: none;
-        background: rgba(255,255,255,0.18);
-        color: white;
-        border-radius: 14px;
-        font-size: 15px;
-        transition: 0.3s;
-    }
-
-    input:focus, textarea:focus {
-        background: rgba(255,255,255,0.32);
+        padding: 14px;
+        border-radius: 8px;
+        border: 1px solid #d2d2d2;
+        background: #efefef;
+        margin-bottom: 20px;
+        font-size: 16px;
         outline: none;
-        transform: scale(1.02);
-    }
-
-    textarea {
-        min-height: 130px;
-        resize: none;
     }
 
     button {
         width: 100%;
-        padding: 15px;
-        margin-top: 25px;
+        padding: 16px;
         border: none;
-        border-radius: 16px;
-        background: linear-gradient(135deg, #6a8bff, #a663ff);
-        font-size: 17px;
-        font-weight: 600;
+        background: #c96c15;
         color: white;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 10px;
         cursor: pointer;
         transition: 0.3s;
     }
 
     button:hover {
-        transform: translateY(-3px) scale(1.04);
-        box-shadow: 0 0 15px rgba(255,255,255,0.4);
+        background: #e07d1a;
     }
 
-    button:active {
-        transform: scale(0.97);
+    .footer-text {
+        font-size: 13px;
+        margin-top: 8px;
+        opacity: 0.7;
     }
-
-    .footer-info {
-        margin-top: 18px;
-        text-align: center;
-        font-size: 12px;
-        opacity: 0.6;
-    }
-
 </style>
 </head>
 <body>
 
-<div class="wave"></div>
+<div class="wrapper">
 
-<div class="contact-card">
-    <h1>💌 Laissez-moi un message</h1>
-    <div class="subtitle">Je vous répondrai dès que possible ✨</div>
+    <!-- LEFT CONTACT INFOS -->
+    <div class="left-block">
+        <h1>Rencontre nous</h1>
 
-    <form>
-        <label for="nom">Nom</label>
-        <div class="input-box">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" id="nom" placeholder="Votre nom" />
-        </div>
+        <p><i class="fa-solid fa-phone"></i> <strong>Téléphone fixe</strong><br>+1 232 434 3949</p>
 
-        <label for="prenom">Prénom</label>
-        <div class="input-box">
-            <i class="fa-solid fa-user-pen"></i>
-            <input type="text" id="prenom" placeholder="Votre prénom" />
-        </div>
+        <p><i class="fa-solid fa-location-dot"></i> <strong>Notre bureau</strong><br>121 Rock Street, 21 Avenue,<br>New York, NY 92103-9000</p>
 
-        <label for="message">Message</label>
-        <div class="input-box">
-            <i class="fa-solid fa-comment-dots"></i>
+        <p><i class="fa-solid fa-envelope"></i> <strong>Graphique pour nous</strong><br>hi@ourcompany.com</p>
+    </div>
+
+    <!-- MIDDLE IMAGE -->
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Illustration" />
+    </div>
+
+    <!-- RIGHT CONTACT FORM (CONTENT FROM ORIGINAL) -->
+    <div class="right-block">
+        <h2>Entrer en contact</h2>
+
+        <form>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" placeholder="Votre nom">
+
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" placeholder="Votre prénom">
+
+            <label for="message">Message</label>
             <textarea id="message" placeholder="Écrivez votre message ici..."></textarea>
-        </div>
 
-        <button type="submit">Envoyer ✨</button>
-    </form>
+            <button type="submit">Envoyer ✨</button>
+        </form>
 
-    <div class="footer-info">Réponse sous 24h 📬</div>
+        <span class="footer-text">Je réponds généralement sous 24h 📬</span>
+    </div>
+
 </div>
 
 </body>
