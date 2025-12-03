@@ -1,49 +1,66 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
- 
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Mois', 'Température'],
-            ['Janvier', 12],
-            ['Février', 14],
-            ['Mars', 18],
-            ['Avril', 22],
-            ['Mai', 26],
-            ['Juin', 30],
-            ['Juillet', 33],
-            ['Août', 32],
-            ['Septembre', 28],
-            ['Octobre', 22],
-            ['Novembre', 18],
-            ['Décembre', 14]
-        ]);
- 
-        var options = {
-            title: 'Évolution des températures à Tawarano',
-            colors: ['#FF69B4'],   // 🌸 Rose doux
-            backgroundColor: '#FFF0F5', // Rose clair
-            legend: { position: 'none' },
-            hAxis: {
-                textStyle: { color: '#C71585', fontSize: 12 }
-            },
-            vAxis: {
-                textStyle: { color: '#C71585', fontSize: 12 }
-            },
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Mois', 'Température'],
+        ['Janvier', 12],
+        ['Février', 14],
+        ['Mars', 18],
+        ['Avril', 22],
+        ['Mai', 26],
+        ['Juin', 30],
+        ['Juillet', 33],
+        ['Août', 32],
+        ['Septembre', 28],
+        ['Octobre', 22],
+        ['Novembre', 18],
+        ['Décembre', 14]
+    ]);
+
+    var options = {
+        title: 'Histogramme des températures de Tawarano',
+
+        chartArea: {
+            top: 80
+        },
+
+        colors: ['#4169E1'], // bleu comme l'image
+        backgroundColor: '#ffffff',
+        legend: { position: 'none' },
+
+        hAxis: {
+            title: 'Mois',
+            textStyle: { fontSize: 12 },
             titleTextStyle: {
-                color: '#C71585',
-                fontSize: 20,
+                fontSize: 14,
                 bold: true
             }
-        };
- 
-        var chart = new google.visualization.ColumnChart(
-            document.getElementById('chart_div')
-        );
- 
-        chart.draw(data, options);
-    }
+        },
+
+        vAxis: {
+            title: 'Température (°C)',
+            textStyle: { fontSize: 12 },
+            titleTextStyle: {
+                fontSize: 14,
+                bold: true
+            }
+        },
+
+        titleTextStyle: {
+            fontSize: 22,
+            bold: true
+        }
+    };
+
+    var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div')
+    );
+
+    chart.draw(data, options);
+}
 </script>
- 
+
 <div id="chart_div" style="width: 900px; height: 500px;"></div>
