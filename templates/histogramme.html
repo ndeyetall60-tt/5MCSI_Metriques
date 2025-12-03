@@ -23,18 +23,27 @@ function drawChart() {
     var options = {
         title: 'Histogramme des températures de Tawarano',
 
-        chartArea: {
-            top: 80
-        },
+        backgroundColor: '#F0F8FF', // fond bleu clair
 
-        colors: ['#4169E1'], // bleu comme l'image
-        backgroundColor: '#ffffff',
+        colors: ['#FF6F61'], // barres corail
+
         legend: { position: 'none' },
+
+        chartArea: {
+            top: 80,
+            width: '80%',
+            height: '70%'
+        },
 
         hAxis: {
             title: 'Mois',
-            textStyle: { fontSize: 12 },
+            textStyle: {
+                color: '#1E90FF',
+                fontSize: 12,
+                bold: true
+            },
             titleTextStyle: {
+                color: '#00008B',
                 fontSize: 14,
                 bold: true
             }
@@ -42,14 +51,20 @@ function drawChart() {
 
         vAxis: {
             title: 'Température (°C)',
-            textStyle: { fontSize: 12 },
+            textStyle: {
+                color: '#DC143C',
+                fontSize: 12,
+                bold: true
+            },
             titleTextStyle: {
+                color: '#8B0000',
                 fontSize: 14,
                 bold: true
             }
         },
 
         titleTextStyle: {
+            color: '#4B0082',
             fontSize: 22,
             bold: true
         }
